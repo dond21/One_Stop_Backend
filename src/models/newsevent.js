@@ -6,6 +6,10 @@ const eventSchema = new mongoose.Schema({
 
   author: {},
   body: {},
+  createdAt: {
+    type: Date,
+    default: Date.now(),
+  }, 
 });
 
 const Schema = new mongoose.model("Schema", eventSchema);
