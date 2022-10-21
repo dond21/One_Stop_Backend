@@ -20,7 +20,7 @@ app.post("/newsevent", async (req, res) => {
 
 app.get("/newsevent", async (req, res) => {
   try {
-    const getevents = await Schema.find({});
+    const getevents = await Schema.find({}).sort({ createdAt: 1 });
     res.send(getevents);
   } catch (e) {
     res.status(400).send(e);
